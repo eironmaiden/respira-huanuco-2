@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Respira Huánuco - Restricción Vehicular</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="codigo.js"></script>
+</head>
+
+<body>
+  <style>
+    body{
+      background-color: greenyellow;
+    }
+  </style>
+  
+  <nav class="navbar navbar-expand-lg bg-warning px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-wind me-2 text-success"></i>
+        Respira Huánuco
+      </a>
+      
+
+      <button class="btn btn-success fw-bold px-4 py-2 rounded-pill" onclick="mostrarCreadores()">
+        <i class="bi bi-people-fill me-2"></i>
+        Creadores
+      </button>
+    </div>
+  </nav>
+
+  <div id="modalCreadores" class="modal-creadores">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2><i class="bi bi-people-fill me-2"></i>Nuestro Equipo Creador</h2>
+        <button class="btn-cerrar" onclick="cerrarCreadores()">&times;</button>
+      </div>
+      <p class="modal-subtitle">Conoce a las personas detrás de Respira Huánuco</p>
+      
+      <div class="creadores-grid">
+        <div class="creador-card">
+          <img src="img/julio.jpg" alt="julio" class="creador-avatar">
+          <h3>Julio Alva Castañeda</h3>
+          <p class="creador-rol">Diseñador del CSS</p>
+          <p>Cel. 974574374</p>
+          <div class="creador-links">
+          <p class="creador-descripcion">julioalva2292@gmail.com</p>  
+          </div>
+        </div>
+        <div class="creador-card">
+          <img src="img/Aron.png" alt="Aron" class="creador-avatar">
+          <h3>Aron Merino Ortega</h3>
+           <p class="creador-rol">Diseñador del CSS</p>
+          <p>Cel. 974574374</p>
+          <div class="creador-links">
+          <p class="creador-descripcion">aronmoises1182@gmail.com</p>
+          </div>
+        </div>
+        <div class="creador-card">
+          <img src="img/gabriela.jpg" alt="Gabriela" class="creador-avatar">
+          <h3>Gabriela Juanpedro Toribio</h3>
+           <p class="creador-rol">Diseñador del CSS</p>
+          <p>Cel. 900679637</p>
+          <div class="creador-links">
+          <p class="creador-descripcion">abriltoribio42@gmail.com</p>
+          </div>
+        </div>
+        <div class="creador-card">
+          <img src="img/jimmy.jpg" alt="jimmy" class="creador-avatar">
+          <h3>Jimmy Vega Chavarria</h3>
+           <p class="creador-rol">Diseñador del CSS</p>
+          <p>Cel. 978745872</p>
+          <div class="creador-links">
+          <p class="creador-descripcion">jimmyvega179@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p><strong>Respira Huánuco</strong> - Comprometidos con un aire más limpio para nuestra ciudad</p>
+      </div>
+    </div>
+  </div>
+  <header class="seccion-principal text-center py-5">
+    <div class="container">
+      <h1 class="titulo-principal mb-4">¡Juntos por un aire más limpio para Huánuco!</h1>
+      <p class="subtitulo mb-4">Consulta si tu vehículo está restringido hoy</p>
+    </div>
+  </header>
+  <section class="container my-5">
+    <div class="tarjeta-aire mb-5">
+      <div class="encabezado-tarjeta">
+        <h3><i class="bi bi-exclamation-triangle-fill me-2"></i>Estado del Aire</h3>
+      </div>
+      <div class="contenido-tarjeta">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="circulo-aire comando-while">
+              <div class="valor-ica" id="valorIca">128</div>
+              <div class="etiqueta-ica">ICA</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4 class="estado-calidad comando-return" id="estadoCalidad">MALA</h4>
+            <p class="descripcion-calidad" id="descripcionCalidad">
+              La calidad del aire es nociva para grupos sensibles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="seccion-informacion mb-5">
+      <button class="boton-informacion comando-function" onclick="mostrarInformacion()">
+        <i class="bi bi-info-circle me-2"></i>¿Qué es la calidad del aire?
+      </button>
+      <div id="informacionCalidad" class="contenido-informacion">
+        <h4>¿Qué es la calidad del aire?</h4>
+        <p>El aire limpio es esencial para una vida saludable. La calidad del aire es una medida de la cantidad de elementos que hay en el aire, incluyendo partículas y contaminantes.</p>
+        <h4>Escala del Índice de Calidad del Aire (ICA)</h4>
+        <div class="switch-case-container">
+          <h5>Niveles de calidad :</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Color</th>
+                <th>Nivel</th>
+                <th>Valores</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color:#00e400;">
+                <td>Verde</td>
+                <td>Buena</td>
+                <td>0 a 50</td>
+                <td>La calidad del aire es satisfactoria</td>
+              </tr>
+              <tr style="background-color:#ffff00;">
+                <td>Amarillo</td>
+                <td>Moderada</td>
+                <td>51 a 100</td>
+                <td>La calidad del aire es aceptable</td>
+              </tr>
+              <tr style="background-color:#ff7e00;">
+                <td>Naranja</td>
+                <td>Nociva</td>
+                <td>101 a 150</td>
+                <td>Grupos sensibles pueden verse afectados</td>
+              </tr>
+              <tr style="background-color:#ff0000;">
+                <td>Rojo</td>
+                <td>Mala</td>
+                <td>151 a 200</td>
+                <td>Todos pueden verse afectados</td>
+              </tr>
+              <tr class="comando-default">
+                <td>Morado</td>
+                <td>Muy Mala</td>
+                <td>201+</td>
+                <td>Riesgo grave para todos (caso default)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="seccion-restriccion">
+      <div class="encabezado-seccion text-center mb-4">
+        <h2><i class="bi bi-car-front me-2"></i>Restricción Vehicular</h2>
+        <p>Consulta si tu vehículo está restringido hoy </p>
+      </div>
+
+      <div class="tarjeta-selector">
+        <label for="vehiculo" class="form-label">
+          <i class="bi bi-search me-2"></i>¿Qué vehículo tiene?
+        </label>
+        <select id="vehiculo" class="form-select comando-function" onchange="mostrarRestriccion()">
+          <option value="">Selecciona una opción</option>
+          <option value="motocicleta1">🛵 Motocicleta antes del 2002</option>
+          <option value="motocicleta2">🛵 Motocicleta antes del 2010</option>
+          <option value="automovil1">🚙 Automóvil con sello verde</option>
+          <option value="automovil2">🚖 Automóvil sin sello verde</option>
+          <option value="busUrbano">🚌 Bus urbano</option>
+          <option value="camion">🚛 Camión pesado</option>
+        </select>
+        
+        <div id="contenedorImagenes" class="imagenes-vehiculo"></div>
+        <div id="resultado" class="resultado-restriccion mt-3"></div>
+        
+        <div class="mt-3">
+          <small class="text-muted">
+            <i class="bi bi-code-square me-1"></i>
+          </small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="seccion-consejos mt-5">
+      <h3 class="text-center mb-4"><i class="bi bi-lightbulb me-2"></i>¿Cómo mejorar el aire?</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="tarjeta-consejo comando-function">
+            <div class="icono-consejo">♻️</div>
+            <h5>Recicla</h5>
+            <p>Separa tus residuos y reduce el consumo</p>
+            <small class="text-muted">Función: reducirContaminacion()</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="tarjeta-consejo comando-while">
+            <div class="icono-consejo">🚲</div>
+            <h5>Usa bicicleta</h5>
+            <p>Prefiere transporte sostenible</p>
+            <small class="text-muted">While: recorrer rutas ecológicas</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="tarjeta-consejo comando-return">
+            <div class="icono-consejo">🌳</div>
+            <h5>Planta árboles</h5>
+            <p>Contribuye con la reforestación</p>
+            <small class="text-muted">Return: oxígeno puro</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background-color:#71c7e9; text-align:center; padding:40px;">
+  <a href="https://facebook.com" target="_blank">
+    <img src="img/facebook.png" alt="Facebook" width="30">
+  </a>
+
+  <a href="https://instagram.com/tuusuario" target="_blank">
+    <img src="img/instagram.png" alt="Instagram" width="30">
+  </a>
+  
+  <a href="https://wa.me/tu-numero" target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp" width="30">
+  </a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
